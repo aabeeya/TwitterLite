@@ -12,6 +12,7 @@
 		7624414E1F7A30D50086C657 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7624414D1F7A30D50086C657 /* Assets.xcassets */; };
 		762441511F7A30D50086C657 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7624414F1F7A30D50086C657 /* LaunchScreen.storyboard */; };
 		762441591F7A33390086C657 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762441581F7A33390086C657 /* LoginViewController.swift */; };
+		762677E81F8AC2DF0030F87B /* MentionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762677E71F8AC2DF0030F87B /* MentionsViewController.swift */; };
 		76E946C91F7CCE2100A026F8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E946C81F7CCE2100A026F8 /* User.swift */; };
 		76E946CB1F7CCE2F00A026F8 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E946CA1F7CCE2F00A026F8 /* Tweet.swift */; };
 		76E946CD1F7CDC1B00A026F8 /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E946CC1F7CDC1B00A026F8 /* TwitterClient.swift */; };
@@ -20,6 +21,10 @@
 		9CA0CB131F805C3400EA3293 /* HomeFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0CB121F805C3400EA3293 /* HomeFeedCell.swift */; };
 		9CA0CB151F819FB900EA3293 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0CB141F819FB900EA3293 /* ComposeViewController.swift */; };
 		9CA0CB171F81A0BD00EA3293 /* TweetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0CB161F81A0BD00EA3293 /* TweetDetailsViewController.swift */; };
+		9CD460131F8882650011E8A8 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD460121F8882650011E8A8 /* MenuViewController.swift */; };
+		9CD460151F88841A0011E8A8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD460141F88841A0011E8A8 /* ProfileViewController.swift */; };
+		9CD460171F8884590011E8A8 /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD460161F8884590011E8A8 /* HamburgerViewController.swift */; };
+		9CD4601D1F888CBE0011E8A8 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD4601C1F888CBE0011E8A8 /* MenuCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +36,7 @@
 		762441501F7A30D50086C657 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		762441521F7A30D50086C657 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		762441581F7A33390086C657 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		762677E71F8AC2DF0030F87B /* MentionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentionsViewController.swift; sourceTree = "<group>"; };
 		76E946C81F7CCE2100A026F8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		76E946CA1F7CCE2F00A026F8 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		76E946CC1F7CDC1B00A026F8 /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.swift; sourceTree = "<group>"; };
@@ -38,6 +44,10 @@
 		9CA0CB121F805C3400EA3293 /* HomeFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedCell.swift; sourceTree = "<group>"; };
 		9CA0CB141F819FB900EA3293 /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		9CA0CB161F81A0BD00EA3293 /* TweetDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetDetailsViewController.swift; sourceTree = "<group>"; };
+		9CD460121F8882650011E8A8 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		9CD460141F88841A0011E8A8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		9CD460161F8884590011E8A8 /* HamburgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
+		9CD4601C1F888CBE0011E8A8 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		A05C50C8F2DB6D86F3A1BAA6 /* Pods-TwitterLite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterLite.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterLite/Pods-TwitterLite.debug.xcconfig"; sourceTree = "<group>"; };
 		C448A72233AFC1EBA41EB789 /* Pods-TwitterLite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterLite.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterLite/Pods-TwitterLite.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,6 +113,10 @@
 				76E946CE1F7CF26000A026F8 /* TweetsViewController.swift */,
 				9CA0CB141F819FB900EA3293 /* ComposeViewController.swift */,
 				9CA0CB161F81A0BD00EA3293 /* TweetDetailsViewController.swift */,
+				9CD460121F8882650011E8A8 /* MenuViewController.swift */,
+				9CD460141F88841A0011E8A8 /* ProfileViewController.swift */,
+				9CD460161F8884590011E8A8 /* HamburgerViewController.swift */,
+				762677E71F8AC2DF0030F87B /* MentionsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -129,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				9CA0CB121F805C3400EA3293 /* HomeFeedCell.swift */,
+				9CD4601C1F888CBE0011E8A8 /* MenuCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -254,13 +269,11 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-TwitterLite/Pods-TwitterLite-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/BDBOAuth1Manager/BDBOAuth1Manager.framework",
-				"${BUILT_PRODUCTS_DIR}/NSDateMinimalTimeAgo/NSDateMinimalTimeAgo.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BDBOAuth1Manager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSDateMinimalTimeAgo.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -274,14 +287,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CD460171F8884590011E8A8 /* HamburgerViewController.swift in Sources */,
 				76E946C91F7CCE2100A026F8 /* User.swift in Sources */,
+				9CD460131F8882650011E8A8 /* MenuViewController.swift in Sources */,
 				76E946CB1F7CCE2F00A026F8 /* Tweet.swift in Sources */,
 				9CA0CB131F805C3400EA3293 /* HomeFeedCell.swift in Sources */,
+				762677E81F8AC2DF0030F87B /* MentionsViewController.swift in Sources */,
 				9CA0CB151F819FB900EA3293 /* ComposeViewController.swift in Sources */,
 				9CA0CB171F81A0BD00EA3293 /* TweetDetailsViewController.swift in Sources */,
+				9CD460151F88841A0011E8A8 /* ProfileViewController.swift in Sources */,
 				762441591F7A33390086C657 /* LoginViewController.swift in Sources */,
 				76E946CF1F7CF26000A026F8 /* TweetsViewController.swift in Sources */,
 				76E946CD1F7CDC1B00A026F8 /* TwitterClient.swift in Sources */,
+				9CD4601D1F888CBE0011E8A8 /* MenuCell.swift in Sources */,
 				762441471F7A30D50086C657 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

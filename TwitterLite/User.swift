@@ -16,23 +16,32 @@ class User: NSObject {
     var screenname: String?
     var profileUrl: URL?
     var tagline: String?
+    var followerCount: NSNumber?
+    var followingCount: NSNumber?
+    var tweetsCount: NSNumber?
+    var headerImageUrl: URL?
 
     var dictionary: NSDictionary?
 
     init(dictionary: NSDictionary){
-
         // original dictionary for deserialization
         self.dictionary = dictionary
 
         name = dictionary["name"] as? String
         screenname = dictionary["screen_name"] as? String
-
         let profileUrlString = dictionary["profile_image_url_https"] as? String
         if let profileUrlString = profileUrlString {
             profileUrl = URL(string: profileUrlString as String)
         }
+        let headerImageUrlString = dictionary["profile_background_image_url_https"] as? String
+        if let headerImageUrlString = headerImageUrlString {
+            headerImageUrl = URL(string: headerImageUrlString as String)
+        }
 
         tagline = dictionary["description"]  as? String
+        followerCount = dictionary["followers_count"] as? NSNumber
+        followingCount = dictionary["friends_count"] as? NSNumber
+        tweetsCount = dictionary["statuses_count"] as? NSNumber
 
     }
 

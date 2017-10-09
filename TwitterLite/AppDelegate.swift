@@ -18,13 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
+        // if user is logged in, go straight to hometimeline, with hamburger menu behind it
         if User.currentUser != nil {
             // instead of going to login screen, go staright to tweets screen
             print ("There is a current user")
             
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "TweetsNavigationController")
-            window?.rootViewController = vc
+            let storyboard2 = UIStoryboard(name: "Main", bundle: nil)
+            let menuViewController = storyboard2.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+            
+            let hamburgerViewController = storyboard2.instantiateViewController(withIdentifier: "HamburgerViewController") as! HamburgerViewController
+            
+            // set menu before setting hamburger 
+            menuViewController.hamburgerViewController = hamburgerViewController
+            hamburgerViewController.menuViewController = menuViewController
+            
+            window?.rootViewController = hamburgerViewController
         }
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: User.userDidLogoutNotification), object: nil, queue: OperationQueue.main) { (Notification) -> Void in
@@ -34,10 +42,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let vc = storyboard.instantiateInitialViewController()
 
             self.window?.rootViewController = vc
+
         }
         
         return true
     }
+    
+    /* func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+     
+        let hamburgerViewController = window!.rootViewController as! HamburgerViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let menuViewController = storyboard.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+        hamburgerViewController.menuViewController  = menuViewController
+        menuViewController.hamburgerViewController = hamburgerViewController
+        
+        return true
+    } */
+
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

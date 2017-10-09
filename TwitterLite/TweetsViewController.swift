@@ -13,7 +13,6 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     var tweets: [Tweet] = []
     
     @IBOutlet var tableView: UITableView!
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +46,18 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             let tweetDetailsVC = vc.childViewControllers[0] as! TweetDetailsViewController;
             tweetDetailsVC.tweet = tweet
         }
+        if segue.identifier == "profileModalSegue" {
+            let tapGestureRecognizer = sender as! UITapGestureRecognizer
+            let indexPathRow = tapGestureRecognizer.view?.tag
+            let tweet = tweets[indexPathRow!]
+
+            TwitterClient.sharedInstance?.userInfo(userName: tweet.nameHandle!, success: { (user: User) in
+                let profileVC = vc.childViewControllers[0] as! ProfileViewController;
+                profileVC.user = user
+            }, failure: { (error: NSError) in
+                print (error.localizedDescription)
+            })
+        }
     }
 
 
@@ -71,7 +82,11 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeFeedCell", for: indexPath) as! HomeFeedCell
-        
+
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTap))
+        cell.thumbImageView.addGestureRecognizer(tapGesture)
+        cell.thumbImageView.tag = indexPath.row
+
         cell.tweet = tweets[indexPath.row]
         
         return cell
@@ -91,6 +106,11 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         })
     }
     
+    @IBAction func onTap(sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "profileModalSegue", sender: sender)
+    }
+    
+
     /*
     // MARK: - Navigation
 

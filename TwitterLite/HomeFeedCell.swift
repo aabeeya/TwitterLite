@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import NSDateMinimalTimeAgo
-
 
 class HomeFeedCell: UITableViewCell {
 

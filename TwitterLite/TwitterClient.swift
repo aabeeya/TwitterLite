@@ -106,6 +106,24 @@ class TwitterClient: BDBOAuth1SessionManager {
         })
 
     }
+    
+    func userTimeLine(userName: String? = nil, success: @escaping ([Tweet]) -> (), failure: @escaping (NSError) -> ()){
+        var parameters: [String:String] = [:]
+        if userName != nil {
+            parameters =  ["screen_name": userName!]
+        }
+        get("1.1/statuses/user_timeline.json", parameters: parameters, progress: nil, success: { (task:URLSessionDataTask, response: Any?) in
+            
+            let dictionaries = response as! [NSDictionary]
+            
+            let tweets = Tweet.tweetsWithArray(dictionaries:dictionaries)
+            
+            // on success I am going to hand you back your tweets
+            success(tweets)
+            
+        }, failure: { (task: URLSessionDataTask?, error: Error!) in
+            failure (error as! NSError)
+        })    }
 
 
 
@@ -174,5 +192,33 @@ class TwitterClient: BDBOAuth1SessionManager {
             failure (error as! NSError)
         })
         
+    }
+    
+    func userInfo(userName: String, success: @escaping((User)) -> (), failure: @escaping (NSError) -> ()) {
+        
+        get("1.1/users/show.json", parameters: ["screen_name": userName], progress: nil, success: { (task: URLSessionDataTask, response: Any?) in
+            let userDictionary = response as! NSDictionary
+            let user = User(dictionary: userDictionary)
+            success(user)
+        }, failure: { (task: URLSessionDataTask?, error: Error!) in
+            failure (error as! NSError)
+        })
+        
+    }
+
+    func mentionsTimeline(success: @escaping ([Tweet]) -> (), failure: @escaping (NSError) -> ()) {
+
+        get("1.1/statuses/mentions_timeline.json", parameters: nil, progress: nil, success: { (task:URLSessionDataTask, response: Any?) in
+
+            let dictionaries = response as! [NSDictionary]
+
+            let tweets = Tweet.tweetsWithArray(dictionaries:dictionaries)
+
+            // on success I am going to hand you back your tweets
+            success(tweets)
+
+        }, failure: { (task: URLSessionDataTask?, error: Error!) in
+            failure (error as! NSError)
+        })
     }
 }
